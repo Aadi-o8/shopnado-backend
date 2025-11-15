@@ -5,6 +5,7 @@ import connectDb from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
 import userRouter from './routes/userRoute.js'
 import productRouter from './routes/productRoute.js'
+import cartRouter from './routes/cartRoutes.js'
 
 // App config
 const app = express()
@@ -17,13 +18,12 @@ app.use(express.json())
 app.use(cors())
 
 // Api endpoints
-console.log("request toh aai hai ji");
-
-app.use('/api/user', userRouter)
-app.use('/api/product', productRouter)
+app.use('/api/user', userRouter);
+app.use('/api/product', productRouter);
+app.use('/api/cart', cartRouter);
 
 app.get('/', (req, res)=> {
-    res.send('Api Working fine as fuck')
+    res.send('Api is Working fine');
 })
 
 app.listen(port, ()=> console.log('Server started on port: ' + port))

@@ -45,12 +45,12 @@ const addProduct = async (req, res) => {
 }
 
 // function to list products
-const listProduct = async (req, res) => {
+const listProduct = async (_req, res) => {
     try {
         // const {name, } = req.body
 
         const product = await productModel.find({});
-        res.json({success: true, product})
+        res.json({success: true, product, message: 'Aaliye re'})
 
     } catch (error) {
         console.log(error);
