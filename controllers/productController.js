@@ -45,7 +45,7 @@ const addProduct = async (req, res) => {
 }
 
 // function to list products
-const listProduct = async (_req, res) => {
+const listProduct = async (req, res) => {
     try {
         // const {name, } = req.body
 
