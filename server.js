@@ -16,7 +16,10 @@ connectCloudinary()
 
 // Middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+   origin: ["http://localhost:5173", "https://shopnado-client.vercel.app"],
+   credentials: true
+}))
 
 // Api endpoints
 app.use('/api/user', userRouter);
